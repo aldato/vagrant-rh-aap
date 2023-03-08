@@ -4,6 +4,8 @@ We can use Vagrant to provision a fully fledged AAP environment. This build
 is tested in Fedora using libvirt images. The vagrant-registration plugin is
 used to automatically manage the licensing of the underlying RHEL VMs.
 
+This repository has been changed to be able to deploy AAP in a single VM, meaning that the DB will be installed in the same VM as the Automation Controller and no Automation Hub and SSO will be installed.
+
 ## Handling .env file
 
 To import the values stored in a .env file run this command:
@@ -32,7 +34,7 @@ SPONGE_AAP_SSO_KEYSTORE_PASSWORD=""
 
 ## The Ansible Automation Platform Installer Collection
 
-Current the installer is not publically available in a way that can directly be
+Currently the installer is not pubickly available in a way that can directly be
 installed via `ansible-galaxy`. If you download and extract the online
 installer from Red Hat's web-site the collection can be re-packaged from there.
 
