@@ -60,7 +60,7 @@ Vagrant.configure("2") do |config|
           :bundle_install => "False",
           :create_preload_data => "False",
           # Default is False
-          :upgrade_ansible_with_tower => "False"
+          :upgrade_ansible_with_tower => "False",
           # FROM group_vars/all
           :tower_package_name => "automation-controller",
           :tower_package_version => "4.2.1",
