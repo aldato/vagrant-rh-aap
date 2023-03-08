@@ -2,13 +2,15 @@
 # The installer play introduced a requirement not present in generic/rhel9:
 #     TASK [ansible.automation_platform_installer.nginx : Open up permissions
 #     on nginx.]
-- name: Install 'semanage' Python 3 module on Automation Controllers
+- name: Install 'semanage' Python 3 module on Automation Controller
   hosts: automationcontroller
 
   tasks:
-    - ansible.builtin.dnf:
+    - name: Install libsemanage
+      ansible.builtin.dnf:
         name:
           - python3-libsemanage
         state: present
 
-- import_playbook: ansible.automation_platform_installer.install
+- name: Import playbook for AAP installation
+  import_playbook: ansible.automation_platform_installer.install
